@@ -1,0 +1,135 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+   background-color: #7f92e7;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+    width: 100%;
+    height: 100vh;
+}
+
+.map-viewer {
+    width: 100%;  
+    height:100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    touch-action: none;
+    }
+
+.map-layer {
+    position: relative;
+    display: inline-block;
+    transform-origin: center center;
+}
+
+.map-image {
+    display: block;
+    max-width: 120vw;
+    max-height: 121vh;
+    width: auto;
+    height: auto;
+    user-select: none;
+    -webkit-user-drag: none;
+    /*transform-origin: center center;*/
+    pointer-events: none;  
+    cursor: grab;
+}
+
+.map-layer:active .map-image {
+    cursor: grabbing;
+}
+
+.marker {
+    position: absolute;
+    transform: translate(-50%,-100%);
+    border:none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.marker img {
+    object-fit: contain;
+    display: block;
+    pointer-events: none;
+    transition: transform 0.2s ease;
+}
+
+.marker:hover img {
+    transform: scale(1.08);
+}
+
+.popup {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 220px;
+    max-width: 240px;
+    background: rgba(255, 255, 255, 0.96);
+    color: #4b3b4f;
+    border-radius: 16px;
+    padding: 18px 18px 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    z-index: 100;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+.popup h3 {
+    margin: 0 28px 8px 0;
+    font-size: 18px;
+}
+
+.popup p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    color: #6e5c72;
+}
+
+/*#resetZoom {
+    width: auto;
+    padding: 0 14px;
+    border-radius: 999px;
+    font-size: 14px;
+}
+
+.zoom-level {
+    min-width: 64px;
+    text-align: center;
+    font-size: 14px;
+    color: #3a3140;
+}*/
+
+ /*   .map-image {
+        max-width: none;
+    }
+
+
+
