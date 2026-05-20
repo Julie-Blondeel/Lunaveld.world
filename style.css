@@ -24,6 +24,7 @@ body {
     justify-content: center;
     align-items: center;
     touch-action: none;
+    overflow: hidden;
     }
 
 .map-layer {
@@ -111,6 +112,61 @@ body {
     line-height: 1;
     cursor: pointer;
     color: #6e5c72;
+}
+
+.water-layer {
+    position: absolute;
+    top: 0;
+    left:0;
+
+    width:100%;
+    height:auto;
+
+    pointer-events: none;
+
+    opacity:0.75;
+    mix-blend-mode: screen;
+    animation: waterFloat 8s ease-in-out infinite alternate;
+
+}
+
+@keyframes waterFloat{
+
+    0%{
+        transform:
+        translateY(0px)
+        translateX(0px)
+        rotate(0deg);
+    }
+
+    25% {
+        transform:
+        translateY(-6px)
+        translateX(4px)
+        rotate(0.4deg);
+    }
+
+    50% {
+        transform:
+        translateY(4px)
+        translateX(-5px)
+        rotate(-0.3deg);
+    }
+
+    75% {
+        transform:
+        translateY(-3px)
+        translateX(3px)
+        rotate(0.2deg);
+    }
+
+    100% {
+        transform:
+        translateY(5px)
+        translateX(-2px)
+        rotate(-0.4deg);
+    }
+    
 }
 
 /*#resetZoom {
