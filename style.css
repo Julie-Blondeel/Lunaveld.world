@@ -186,31 +186,33 @@ body {
  mix-blend-mode: screen;
 
  animation: 
- pulseGlow 4s ease-in-out infinite,
+ pulseGlow 2.2s ease-in-out infinite,
  floatGlow 8s ease-in-out infinite;
 
  filter: 
- drop-shadow(0 0 6px rgba(255,120,120,0.7))
- drop-shadow(0 0 18px rgba(255,80,80,0.45))
- blur(0.3px);
+ drop-shadow(0 0 10px rgba(255,140,140,0.95))
+ drop-shadow(0 0 26px rgba(255,70,70,0.8))
+ drop-shadow(0 0 52px rgba(255,40,40,0.45))
+ blur(0.15px);
 
  z-index: 4;
 }
 
 @keyframes pulseGlow{
+
     0%{
-        opacity: 0.55;
+        opacity: 0.45;
         transform: scale(1);
     }
 
     50%{
         opacity: 1;
-        transition: scale(1.015);
+        transform: scale(1.06);
     }
 
     100%{
-        opacity: 0.55;
-        transition: scale(1);
+        opacity: 0.45;
+        transform: scale(1);
     }
 }
 
