@@ -128,6 +128,8 @@ body {
     mix-blend-mode: screen;
     animation: waterFloat 8s ease-in-out infinite alternate;
 
+    z-index: 3;
+
 }
 
 @keyframes waterFloat{
@@ -167,6 +169,64 @@ body {
         rotate(-0.4deg);
     }
     
+}
+
+.glow-layer{
+ position: absolute;
+ top:0;
+ left:0;
+
+ width: 100%;
+ height: auto;
+
+ pointer-events: none;
+
+ opacity: 0.85;
+
+ mix-blend-mode: screen;
+
+ animation: 
+ pulseGlow 4s ease-in-out infinite,
+ floatGlow 8s ease-in-out infinite;
+
+ filter: 
+ drop-shadow(0 0 6px rgba(255,120,120,0.7))
+ drop-shadow(0 0 18px rgba(255,80,80,0.45))
+ blur(0.3px);
+
+ z-index: 4;
+}
+
+@keyframes pulseGlow{
+    0%{
+        opacity: 0.55;
+        transform: scale(1);
+    }
+
+    50%{
+        opacity: 1;
+        transition: scale(1.015);
+    }
+
+    100%{
+        opacity: 0.55;
+        transition: scale(1);
+    }
+}
+
+@keyframes floatGlow{
+
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-6px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
 }
 
 /*#resetZoom {
